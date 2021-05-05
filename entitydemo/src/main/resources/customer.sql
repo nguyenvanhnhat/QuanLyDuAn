@@ -1,0 +1,10 @@
+insert into customer (firstname, lastname, email, mobile, job) values ('Brit', 'Menauteau', 'bmenauteau0@discovery.com', '+86 (180) 607-2594', 'Biostatistician III');
+insert into customer (firstname, lastname, email, mobile, job) values ('Todd', 'Frend', 'tfrend1@ocn.ne.jp', '+52 (800) 589-9601', 'Professor');
+insert into customer (firstname, lastname, email, mobile, job) values ('Adela', 'Grasha', 'agrasha2@phpbb.com', '+62 (687) 826-5092', 'Business Systems Development Analyst');
+insert into customer (firstname, lastname, email, mobile, job) values ('Fabien', 'Walters', 'fwalters3@example.com', '+261 (297) 253-3220', 'Analog Circuit Design manager');
+insert into customer (firstname, lastname, email, mobile, job) values ('Luther', 'Crosetto', 'lcrosetto4@360.cn', '+86 (927) 839-3128', 'Teacher');
+insert into customer (firstname, lastname, email, mobile, job) values ('Melisenda', 'Goddert.sf', 'mgoddertsf5@typepad.com', '+55 (836) 435-3997', 'Junior Executive');
+insert into customer (firstname, lastname, email, mobile, job) values ('Willamina', 'McKeon', 'wmckeon6@wikimedia.org', '+86 (171) 963-8522', 'Cost Accountant');
+insert into customer (firstname, lastname, email, mobile, job) values ('Winnah', 'Parradye', 'wparradye7@com.com', '+254 (505) 691-2174', 'Paralegal');
+insert into customer (firstname, lastname, email, mobile, job) values ('Gelya', 'Deaville', 'gdeaville8@topsy.com', '+1 (702) 448-5455', 'Editor');
+insert into customer (firstname, lastname, email, mobile, job) values ('Tedra', 'Beake', 'tbeake9@va.gov', '+51 (591) 965-1265', 'Analog Circuit Design manager');
