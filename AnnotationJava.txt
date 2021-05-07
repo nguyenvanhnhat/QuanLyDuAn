@@ -1,0 +1,57 @@
+Annotation @ENTITY
+ - công dụng chính của @Entity annotation là biến một JavaBean trở thành một entity để 
+   chúng ta có thể thao tác với database sử dụng entity này.
+Annotation @Table
+ - Trong trường hợp, chỉ muốn thay đổi tên bảng của database sẽ sử dụng trong ứng dụng của mình mà không thay đổi tên của entity, 
+   sử dụng @Table annotation sẽ đáp ứng nhu cầu đó.
+Annotation @Data
+ - Bạn cảm thấy mệt mỏi với việc khai báo phương thức Getter, Setter, toString (), equals () và hashCode () cho mỗi lớp mà chúng ta muốn sử dụng các phương thức này. 
+   Sử dụng chú thích @Data trong Project Lombok có thể giúp chúng ta tránh được vấn đề này.
+Annotation @NoArgsConstructor
+- sẽ tạo ra một phương thức khởi tạo không có tham số. 
+  Nếu điều này là không thể (vì các trường cuối cùng), thay vào đó sẽ xảy ra lỗi trình biên dịch, 
+  trừ khi @NoArgsConstructor(force = true)được sử dụng, khi đó tất cả các trường cuối cùng được khởi tạo bằng 0/ false/ null. Đối với các trường có ràng buộc, chẳng hạn như @NonNulltrường, không có kiểm tra nào được tạo, vì vậy hãy lưu ý rằng các ràng buộc này thường sẽ không được thực hiện cho đến khi các trường đó được khởi tạo đúng cách sau đó. Một số cấu trúc java nhất định, chẳng hạn như ngủ đông và Giao diện nhà cung cấp dịch vụ yêu cầu một hàm tạo no-args. 
+  Chú thích này hữu ích chủ yếu khi kết hợp với một trong hai @Datahoặc một trong các hàm tạo khác tạo chú thích.
+Annotation @AllArgsConstructor
+ - @AllArgsConstructortạo một phương thức khởi tạo với 1 tham số cho mỗi trường trong lớp của bạn. 
+   Các trường được đánh dấu bằng @NonNullkết quả kiểm tra rỗng trên các tham số đó.
+Annotation @Id
+ - Giá trị khóa chính của một entity
+Annotation @GeneratedValue
+ - khai báo cho thuộc tính khóa chính của entity
+Annotation @Column
+ - Trong trường hợp tên cột của bảng trong cơ sở dữ liệu mà bạn đang làm việc không giống với tên của thực thể 
+   bạn đang xác định, bạn có thể sử dụng chú thích @Column để thay đổi tên.
+Annotation @NaturalId
+ - Xác định một thuộc tính là một id tự nhiên
+ Các ID tự nhiên là bất biến theo mặc định và bạn không nên cung cấp các phương thức setter cho chúng. Nếu bạn cần giá trị nhận dạng tự nhiên, có thể thay đổi, 
+ bạn phải đặt thuộc tính có thể thay đổi của chú thích @NaturalId thành true .
+Annotation @ManyToOne
+ - Các @ManyToOne chú thích cho phép bạn để lập bản đồ cột Ngoại chính trong việc lập bản đồ thực thể con để các con 
+ có một tham chiếu đối tượng thực thể để công ty mẹ của nó
+cascade = CascadeType.ALL
+ - nó sẽ thực hiện tất cả các hành động ( PERSIST, REMOVE, REFRESH, MERGE, DETACH) đến các thực thể liên quan
+orphanRemoval = true
+ - Nó đánh dấu rằng các phần tử con sẽ bị xóa khi bạn xóa nó khỏi collection của phần tử cha.
+fetch = FetchType.LAZY
+ - tức là khi bạn find, select 1 đối tượng từ database thì nó sẽ không lấy các đối tượng liên quan
+fetch = FetchType.EAGER
+ - tức là khi bạn find, select 1 đối tượng từ database thì nó sẽ lấy tất cả các đối tượng liên quan
+@JoinColumn(name = "user_id")
+ - Sử dụng @JoinColumn khi các Đối tượng có mối quan hệ trực tiếp, tức là khóa ngoại giữa Đối tượng1 và Đối tượng2.
+@JoinTable
+  Sử dụng @JoinTable khi bạn quản lý mối quan hệ giữa các Đối tượng trong một bảng khác cũng được gọi là JoinTable.
+@PrePersist
+ - Chú thích @PrePersist được sử dụng để định cấu hình lệnh gọi lại cho các sự kiện tồn tại trước (chèn trước) của thực thể. 
+   Nói cách khác, nó được sử dụng để chú thích các phương thức của mô hình để chỉ ra rằng phương thức nên được gọi trước khi thực thể được chèn (tồn tại) vào cơ sở dữ liệu.
+@PreUpdate
+ - @PreUpdate được sử dụng để định cấu hình lệnh gọi lại trước cập nhật cho mô hình thực thể, tức là, 
+   nó được sử dụng để chú thích các phương thức trong mô hình để chỉ ra một hoạt động cần được kích hoạt trước khi một thực thể được cập nhật trong cơ sở dữ liệu.
+@FullTextField
+-  thuộc tính phải là text
+Giải thích
+@JoinTable(
+  name = "post_tag",
+  joinColumns = @JoinColumn(name = "post_id"),
+  inverseJoinColumns = @JoinColumn(name = "tag_id")
+)
